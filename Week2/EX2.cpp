@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int LinearSearchWithsentinel(int a[], int n,int k) {
-    int last = n-1;
+    int last = a[n-1];
     a[n-1] = k;
     int i=0;
     while(a[i]!= k) i++;
