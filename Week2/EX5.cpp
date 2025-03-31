@@ -14,6 +14,7 @@ int subarray(int a[],int n, int sum) {
             cntmin=min(cntmin,r-l);
         }
     }
+    if(cntmin>n) return 0;
     return cntmin;
 }
 int main()

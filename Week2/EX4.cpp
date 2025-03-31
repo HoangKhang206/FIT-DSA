@@ -16,7 +16,7 @@ int solve(int a[],int n,int day) {
     int Max=0;
     int Min=INT_MIN;
     for(int i=0;i<n;i++) {
-        if(a[i]>Min) Max=a[i];
+        if(a[i]>Min) Min=a[i];
         Max+=a[i];
     }
     while(Min<Max) {
