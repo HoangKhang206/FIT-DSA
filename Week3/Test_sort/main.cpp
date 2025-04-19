@@ -1,6 +1,98 @@
 #include <iostream>
-
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+#include <fstream>
+#include "Sort.h"
+#include <cstring>
+#include <chrono>
+#include <ctime>
+using namespace std;
+using namespace std::chrono;
+int main(int argc,char* argv[]) {
+    srand(time(NULL));
+    char* Optionsort= new char[100];
+    cout << "Enter Optionsort:";
+    cin.getline(Optionsort,100);
+    cout << "Optionsort: " << Optionsort << endl;
+    int n=10000;
+    int arr[n];
+    int Op;
+    cout << "option of input: ";
+    cin >> Op;
+    GenerateData(arr,n,Op);
+    auto start1 = high_resolution_clock::now();
+    if(strcmp(Optionsort,"selection-sort")==0) Selection_Sort(arr,n);
+    if(strcmp(Optionsort,"insertion-sort")==0) Insertion_Sort(arr,n);
+    if(strcmp(Optionsort,"bubble-sort")==0) Bubble_Sort(arr,n);
+    if(strcmp(Optionsort,"shaker-sort")==0) Shaker_Sort(arr,n);
+    if(strcmp(Optionsort,"shell-sort")==0) Shell_Sort(arr,n);
+    if(strcmp(Optionsort,"heap-sort")==0) Heap_Sort(arr,n);
+    if(strcmp(Optionsort,"merge-sort")==0) Merge_Sort(arr,0,n-1);
+    if(strcmp(Optionsort,"quick-sort")==0) Quick_Sort(arr,0,n-1);
+    if(strcmp(Optionsort,"counting-sort")==0) Counting_Sort(arr,n);
+    if(strcmp(Optionsort,"radix-sort")==0) Radix_Sort(arr,n);
+    if(strcmp(Optionsort,"flash-sort")==0) Flash_Sort(arr,n);
+    auto end1 = high_resolution_clock::now();
+    auto duration1 = duration_cast<microseconds>(end1 - start1);
+    if(CheckSort(arr,n)==true) cout << "Sorting Successful" << endl;
+    cout <<endl<< "Thời gian chạy thuật toán 10000: " << duration1.count() << " microseconds <==> " << duration1.count()/1000000<<" seconds.";
+    cout << endl<<"So phep so sanh khi chay thuat toan: "<<cnt;
+    n=30000;
+    cnt=0;
+    int arr2[n];
+    GenerateData(arr2,n,Op);
+    auto start2 = high_resolution_clock::now();
+    if(strcmp(Optionsort,"selection-sort")==0) Selection_Sort(arr2,n);
+    if(strcmp(Optionsort,"insertion-sort")==0) Insertion_Sort(arr2,n);
+    if(strcmp(Optionsort,"bubble-sort")==0) Bubble_Sort(arr2,n);
+    if(strcmp(Optionsort,"shaker-sort")==0) Shaker_Sort(arr2,n);
+    if(strcmp(Optionsort,"shell-sort")==0) Shell_Sort(arr2,n);
+    if(strcmp(Optionsort,"heap-sort")==0) Heap_Sort(arr2,n);
+    if(strcmp(Optionsort,"merge-sort")==0) Merge_Sort(arr2,0,n-1);
+    if(strcmp(Optionsort,"quick-sort")==0) Quick_Sort(arr2,0,n-1);
+    if(strcmp(Optionsort,"counting-sort")==0) Counting_Sort(arr2,n);
+    if(strcmp(Optionsort,"radix-sort")==0) Radix_Sort(arr2,n);
+    if(strcmp(Optionsort,"flash-sort")==0) Flash_Sort(arr2,n);
+    auto end2 = high_resolution_clock::now();
+    auto duration2 = duration_cast<microseconds>(end2 - start2);
+    cout <<endl<< "Thời gian chạy thuật toán 30000: " << duration2.count() << " microseconds <==> " << duration2.count()/1000000<<" seconds.";
+    cout << endl<<"So phep so sanh khi chay thuat toan: "<<cnt;
+    n=50000;
+    cnt=0;
+    int arr3[n];
+    GenerateData(arr3,n,Op);
+    auto start3 = high_resolution_clock::now();
+    if(strcmp(Optionsort,"selection-sort")==0) Selection_Sort(arr3,n);
+    if(strcmp(Optionsort,"insertion-sort")==0) Insertion_Sort(arr3,n);
+    if(strcmp(Optionsort,"bubble-sort")==0) Bubble_Sort(arr3,n);
+    if(strcmp(Optionsort,"shaker-sort")==0) Shaker_Sort(arr3,n);
+    if(strcmp(Optionsort,"shell-sort")==0) Shell_Sort(arr3,n);
+    if(strcmp(Optionsort,"heap-sort")==0) Heap_Sort(arr3,n);
+    if(strcmp(Optionsort,"merge-sort")==0) Merge_Sort(arr3,0,n-1);
+    if(strcmp(Optionsort,"quick-sort")==0) Quick_Sort(arr3,0,n-1);
+    if(strcmp(Optionsort,"counting-sort")==0) Counting_Sort(arr3,n);
+    if(strcmp(Optionsort,"radix-sort")==0) Radix_Sort(arr3,n);
+    if(strcmp(Optionsort,"flash-sort")==0) Flash_Sort(arr3,n);
+    auto end3 = high_resolution_clock::now();
+    auto duration3 = duration_cast<microseconds>(end3 - start3);
+    cout <<endl<< "Thời gian chạy thuật toán 50000: " << duration3.count() << " microseconds <==> " << duration3.count()/1000000<<" seconds.";
+    cout << endl<<"So phep so sanh khi chay thuat toan: "<<cnt;
+    n=100000;
+    cnt=0;
+    int arr4[n];
+    GenerateData(arr4,n,Op);
+    auto start4 = high_resolution_clock::now();
+    if(strcmp(Optionsort,"selection-sort")==0) Selection_Sort(arr4,n);
+    if(strcmp(Optionsort,"insertion-sort")==0) Insertion_Sort(arr4,n);
+    if(strcmp(Optionsort,"bubble-sort")==0) Bubble_Sort(arr4,n);
+    if(strcmp(Optionsort,"shaker-sort")==0) Shaker_Sort(arr4,n);
+    if(strcmp(Optionsort,"shell-sort")==0) Shell_Sort(arr4,n);
+    if(strcmp(Optionsort,"heap-sort")==0) Heap_Sort(arr4,n);
+    if(strcmp(Optionsort,"merge-sort")==0) Merge_Sort(arr4,0,n-1);
+    if(strcmp(Optionsort,"quick-sort")==0) Quick_Sort(arr4,0,n-1);
+    if(strcmp(Optionsort,"counting-sort")==0) Counting_Sort(arr4,n);
+    if(strcmp(Optionsort,"radix-sort")==0) Radix_Sort(arr4,n);
+    if(strcmp(Optionsort,"flash-sort")==0) Flash_Sort(arr4,n);
+    auto end4 = high_resolution_clock::now();
+    auto duration4 = duration_cast<microseconds>(end4 - start4);
+    cout <<endl<< "Thời gian chạy thuật toán 100000: " << duration4.count() << " microseconds <==> " << duration4.count()/1000000<<" seconds.";
+    cout << endl<<"So phep so sanh khi chay thuat toan: "<<cnt;
 }

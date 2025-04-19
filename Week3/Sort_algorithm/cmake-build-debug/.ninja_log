@@ -1,0 +1,7 @@
+# ninja log v6
+4	620	1743920392265648075	CMakeFiles/Sort_algorithm.dir/main.cpp.o	6aa758a708037dec
+5	557	1743920392267011748	CMakeFiles/Sort_algorithm.dir/Sort_function.cpp.o	a8624efcd42d3d3d
+620	705	1743920392881813039	Sort_algorithm	e95f5ac6cd4ab569
+4	490	1744027643968704417	CMakeFiles/Sort_algorithm.dir/Sort_function.cpp.o	a8624efcd42d3d3d
+4	544	1744027643968425832	CMakeFiles/Sort_algorithm.dir/main.cpp.o	6aa758a708037dec
+544	628	1744027644508390418	Sort_algorithm	e95f5ac6cd4ab569
